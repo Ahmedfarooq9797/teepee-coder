@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+:root {
+  --primary-color: #6c63ff;
+  --secondary-color: #3f3d56;
+  --background-color: #f0f2f5;
+  --card-background: #ffffff;
+  --text-color: #333333;
+  --success-color: #4caf50;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px 5px 20px; /* top, right, bottom, left */
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.app-main section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+.question-card,
+.code-editor-wrapper {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.question-card:hover,
+.code-editor-wrapper:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question-instructions {
+  padding: 20px;
+  margin: 0;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.code-editor-wrapper {
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(108, 99, 255, 0.2);
+}
+
+.submit-button:hover {
+  background-color: #5a52d5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(108, 99, 255, 0.3);
+}
+
+.submit-button.disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.submit-button.disabled:hover {
+  background-color: #cccccc;
+}
+
+.submit-button:disabled {
+  pointer-events: none;
+}
+
+.button-text {
+  margin-right: 10px;
+}
+
+.button-icon {
+  font-size: 1.2rem;
+}
+
+.feedback-section {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* FeedbackDisplay styles */
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback-score {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+}
+
+.score-label {
+  font-weight: 300;
+}
+
+.score-value {
+  font-weight: 600;
+}
+
+.feedback-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.breakdown-item {
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.breakdown-label {
+  font-weight: 500;
+}
+
+.feedback-comment h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.feedback-comment p {
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.feedback-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.feedback-table th,
+.feedback-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.feedback-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.feedback-table code {
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.question-image {
+  max-width: 50%; /* Keep this to maintain the image size */
+  height: auto; /* This maintains the aspect ratio */
+  display: block; /* Keep this */
+  margin: 20px 0; /* Change this line */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 20px 10px;
+  }
+
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+}
+
+.powered-by {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.powered-by a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.powered-by a:hover {
+  text-decoration: underline;
+}
